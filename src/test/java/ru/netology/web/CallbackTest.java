@@ -40,7 +40,6 @@ public class CallbackTest {
     }
 
 
-
     @Test
     //Тестирование функциональности (в поле ФИ присутствует "Ё")
     public void testedFunctionalityV8() {
@@ -152,8 +151,6 @@ public class CallbackTest {
         String expected = "Поле обязательно для заполнения";
         assertEquals(expected, actual);
     }
-
-
 
 
 }
