@@ -24,6 +24,23 @@ public class CallbackTest {
         assertEquals(expected, actual);
     }
 
+
+    @Test
+    //Тестирование функциональности (Указали только фамилия)
+    public void testedFunctionalityV9() {
+        open("http://localhost:9999");
+        SelenideElement form = $(".form");
+        form.$("[data-test-id=name] input").setValue("Пушкин");
+        form.$("[data-test-id=phone] input").setValue("+79209002011");
+        form.$("[data-test-id=agreement]").click();
+        form.$("button").click();
+        String actual = $("[data-test-id=name].input_invalid .input__sub").getText().trim();
+        String expected = "Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.";
+        assertEquals(expected, actual);
+    }
+
+
+
     @Test
     //Тестирование функциональности (в поле ФИ присутствует "Ё")
     public void testedFunctionalityV8() {
